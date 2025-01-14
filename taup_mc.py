@@ -266,13 +266,13 @@ times, plot ray paths, and generate travel time tables using different velocity 
 
 Example usage:
   # Calculate P and S wave travel times for a depth of 10 km at 30 degrees distance
-  python seismic_analyzer.py --function 1 --depth 10 --distance 30 --phases P,S --model ak135
+  python taup_mc.py --function 1 --depth 10 --distance 30 --phases P,S --model ak135
 
   # Plot ray paths for multiple phases
-  python seismic_analyzer.py --function 2 --depth 100 --distance 45 --phases P,PP,PKP
+  python taup_mc.py --function 2 --depth 100 --distance 45 --phases P,PP,PKP
 
   # Generate a travel time table
-  python seismic_analyzer.py --function 3 --depth 50 --phases P,S
+  python taup_mc.py --function 3 --depth 50 --phases P,S
         """,
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
@@ -338,16 +338,16 @@ Velocity model to use:
 Usage Examples
 -------------
 1. Calculate regional phase travel times:
-   python seismic_analyzer.py --function 1 --depth 10 --distance 8 --phases Pg,Pn,Sg,Sn --model ak135
+   python taup_mc.py --function 1 --depth 10 --distance 8 --phases Pg,Pn,Sg,Sn --model ak135
 
 2. Plot teleseismic ray paths:
-   python seismic_analyzer.py --function 2 --depth 100 --distance 60 --phases P,PP,PKP --model iasp91
+   python taup_mc.py --function 2 --depth 100 --distance 60 --phases P,PP,PKP --model iasp91
 
 3. Generate travel time table for core phases:
-   python seismic_analyzer.py --function 3 --depth 200 --phases PKP,PKIKP,SKS --model prem
+   python taup_mc.py --function 3 --depth 200 --phases PKP,PKIKP,SKS --model prem
 
 4. Interactive mode (recommended for new users):
-   python seismic_analyzer.py
+   python taup_mc.py
             """)
             exit(0)
     except Exception as e:
